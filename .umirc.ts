@@ -10,4 +10,5 @@ export default defineConfig({
   title: '西南以北',
   // 修改在根目录下新建一个public，把logo放在img里
   links: [{ rel: 'icon', href: '/img/logo.png' }],
+  outputPath:'./build'
 });
