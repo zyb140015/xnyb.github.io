@@ -5,7 +5,11 @@ export default defineConfig({
     type: 'none',
   },
   // layout: {},
-  routes: [{ path: '/', component: '@/pages/index' }],
+  routes: [
+    { path: '/', component: '@/pages/home/index' },
+    { path: '/home', component: '@/pages/home/index' },
+    { path: '/about', component: '@/pages/about/index' },
+  ],
   fastRefresh: {},
   title: '西南以北',
   // 修改在根目录下新建一个public，把logo放在img里
@@ -15,4 +19,6 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  dva: {},
+  antd: {},
 });
