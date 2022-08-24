@@ -8,3 +8,7 @@ declare module '*.svg' {
   const url: string;
   export default url;
 }
+
+declare interface PromiseConstructor {
+  myAll(promises: Array<Promise<any>>, count?: number): Promise<Array<any>>;
+}
