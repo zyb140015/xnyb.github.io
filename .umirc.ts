@@ -9,6 +9,8 @@ export default defineConfig({
     { path: '/', component: '@/pages/home/index' },
     { path: '/home', component: '@/pages/home/index' },
     { path: '/about', component: '@/pages/about/index' },
+    { path: '/other', component: '@/pages/other/index' },
+    { path: '/other/cat', component: '@/pages/cat/index' },
   ],
   fastRefresh: {},
   title: '西南以北',

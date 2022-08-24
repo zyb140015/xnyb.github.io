@@ -10,6 +10,7 @@ const HeaderPage = () => {
   const [arr, setArr] = useState([
     { name: '首页', id: 1, click: true, path: '/home' },
     { name: '关于', id: 2, path: '/about' },
+    { name: '其他', id: 3, path: '/other' },
   ]);
   const handleClick = (v: number) => {
     const newArr = arr.map((val) => {
