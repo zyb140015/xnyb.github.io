@@ -4,16 +4,26 @@ import styles from './index.less';
 import { history } from 'umi';
 
 const Other = () => {
-  const handleClick = () => {
-    history.push('/other/cat');
+  const handleClick = (url: string) => {
+    history.push(url);
   };
   return (
     <div>
       <HeaderPage></HeaderPage>
       <div className={styles.other}>
+        <div className={styles.title}>杂项</div>
         <div className={styles.otherContent}>
-          <div className={styles.otherContentList} onClick={handleClick}>
-            谁能拒绝可爱的小喵咪呢～
+          <div
+            className={styles.otherContentList}
+            onClick={() => handleClick('/other/cat')}
+          >
+            猫片～
+          </div>
+          <div
+            className={styles.otherContentList}
+            onClick={() => handleClick('/other/vue')}
+          >
+            一起来学vue～
           </div>
         </div>
       </div>

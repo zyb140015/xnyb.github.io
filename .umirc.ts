@@ -11,6 +11,7 @@ export default defineConfig({
     { path: '/about', component: '@/pages/about/index' },
     { path: '/other', component: '@/pages/other/index' },
     { path: '/other/cat', component: '@/pages/cat/index' },
+    { path: '/other/vue', component: '@/pages/vue/index' },
   ],
   fastRefresh: {},
   title: '西南以北',

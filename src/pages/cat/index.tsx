@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HeaderPage from '../../components/header/index';
 import axios from 'axios';
-import { message, Button } from 'antd';
+import { message, Button, Spin } from 'antd';
 import styles from './index.less';
 interface Image {
   id: string;
@@ -10,11 +10,16 @@ interface Image {
   height: number;
 }
 const Cat = () => {
+  let loading = false;
   const [image, setImage] = useState<Image>();
   useEffect(() => {
     getImg();
+    return () => {
+      loading = false;
+    };
   }, []);
   const getImg = () => {
+    loading = true;
     axios({
       method: 'get',
       url: 'https://api.thecatapi.com/v1/images/search',
@@ -24,22 +29,34 @@ const Cat = () => {
       },
     })
       .then((response) => {
-        console.log(response.data, 'response');
+        loading = false;
         setImage(response.data[0]);
       })
       .catch((error) => {
+        loading = false;
         message.error('请求失败啦～');
       });
   };
   return (
     <div className={styles.cat}>
-      <div>难道一直叫我喵喵吗～</div>
-      <Button type="primary" className={styles.btn} onClick={getImg}>
+      <div className={styles.title}>难道一直叫我喵喵吗～</div>
+      <Button
+        shape="round"
+        size="large"
+        type="dashed"
+        danger
+        className={styles.btn}
+        onClick={getImg}
+      >
         有请下一位小喵咪～
       </Button>
-      {JSON.stringify(image) !== '{}' && image && (
+      {JSON.stringify(image) !== '{}' && image ? (
         <div>
-          <img src={image.url} style={{ height: '300px' }}></img>
+          <img src={image.url} className={styles.img} />
+        </div>
+      ) : (
+        <div>
+          <Spin size="large" />
         </div>
       )}
     </div>
