@@ -23,7 +23,7 @@ const Other = () => {
             className={styles.otherContentList}
             onClick={() => handleClick('/other/vue')}
           >
-            一起来学vue～
+            vue/react遇到的一些问题
           </div>
         </div>
       </div>

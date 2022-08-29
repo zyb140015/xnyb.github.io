@@ -27,7 +27,9 @@
     "axios": "^0.27.2",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.32"
+    "umi": "^3.5.32",
+    "viewerjs": "^1.10.5",
+    "viewerjs-react": "^1.0.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
