@@ -15,7 +15,7 @@ const About = () => {
           />
         </div>
         <div className={styles.user}>
-          <div className={styles.name}>张毅波</div>
+          <div className={styles.name}>西南以北</div>
           <div className={styles.title}>你怎能勉强向南的人陪你向北</div>
           <div className={styles.tips}>联系我</div>
           <div>邮箱：568272239</div>

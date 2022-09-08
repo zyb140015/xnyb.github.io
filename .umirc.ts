@@ -13,6 +13,7 @@ export default defineConfig({
     { path: '/test', component: '@/pages/test/index' },
     { path: '/other/cat', component: '@/pages/cat/index' },
     { path: '/other/vue', component: '@/pages/vue/index' },
+    { path: '/other/flutter', component: '@/pages/flutter/index' },
   ],
   fastRefresh: {},
   title: '西南以北',

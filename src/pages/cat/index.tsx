@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import HeaderPage from '../../components/header/index';
 import axios from 'axios';
 import { message, Button, Spin } from 'antd';
+import RViewerJS from 'viewerjs-react';
 import styles from './index.less';
 interface Image {
   id: string;
@@ -38,28 +38,30 @@ const Cat = () => {
       });
   };
   return (
-    <div className={styles.cat}>
-      <div className={styles.title}>难道一直叫我喵喵吗～</div>
-      <Button
-        shape="round"
-        size="large"
-        type="dashed"
-        danger
-        className={styles.btn}
-        onClick={getImg}
-      >
-        有请下一位小喵咪～
-      </Button>
-      {JSON.stringify(image) !== '{}' && image ? (
-        <div>
-          <img src={image.url} className={styles.img} />
-        </div>
-      ) : (
-        <div>
-          <Spin size="large" />
-        </div>
-      )}
-    </div>
+    <RViewerJS>
+      <div className={styles.cat}>
+        <div className={styles.title}>难道一直叫我喵喵吗～</div>
+        <Button
+          shape="round"
+          size="large"
+          type="dashed"
+          danger
+          className={styles.btn}
+          onClick={getImg}
+        >
+          有请下一位小喵咪～
+        </Button>
+        {JSON.stringify(image) !== '{}' && image ? (
+          <div>
+            <img src={image.url} className={styles.img} />
+          </div>
+        ) : (
+          <div>
+            <Spin size="large" />
+          </div>
+        )}
+      </div>
+    </RViewerJS>
   );
 };
 

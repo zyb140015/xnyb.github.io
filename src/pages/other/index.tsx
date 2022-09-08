@@ -25,6 +25,12 @@ const Other = () => {
           >
             vue/react遇到的一些问题
           </div>
+          <div
+            className={styles.otherContentList}
+            onClick={() => handleClick('/other/flutter')}
+          >
+            flutter学习
+          </div>
         </div>
       </div>
     </div>

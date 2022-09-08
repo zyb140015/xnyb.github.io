@@ -31,6 +31,11 @@ const HeaderPage = () => {
         arr.forEach((v) => {
           if (v.path === history.location.pathname) {
             dispatch(action('router/save', { id: v.id }));
+          } else {
+            // /的时候为首页
+            if (history.location.pathname === '/') {
+              dispatch(action('router/save', { id: 1 }));
+            }
           }
         });
       } else {
